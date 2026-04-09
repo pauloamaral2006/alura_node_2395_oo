@@ -1,4 +1,4 @@
-# Node.js
+# JavaScript Orientação a Objeto
 
 ## ℹ️ Sobre
 
