@@ -10,8 +10,6 @@ console.log(novoAdmin.exibirInfos());
 console.log(novoAdmin.name);
 novoAdmin.name = "André";
 console.log(novoAdmin.name);
-/* 
-novoUser.#name = "Márcia";
-console.log(novoUser.exibirInfos()); 
-console.log(novoUser.montaObjetoUser());
-*/
+
+const novoDocente = new Docente("Guilherme", "g@g.com", "10/10/1980");
+console.log(novoDocente.exibirInfos());

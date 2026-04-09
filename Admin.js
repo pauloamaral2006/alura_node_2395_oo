@@ -5,6 +5,9 @@ export default class Admin extends User {
     super(name, email, nascimento, role, ativo);
   }
 
+  exibirInfos() {
+    return `Nome: ${this.name}, Role: ${this.role}, Ativo: ${this.ativo}`;
+  }
   criarCurso(nomeDoCurso, vagas) {
     return `O curso de ${nomeDoCurso} criado com ${vagas} vagas!`;
   }
