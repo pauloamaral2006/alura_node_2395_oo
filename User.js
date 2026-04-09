@@ -1,14 +1,57 @@
 export default class User {
+  #name;
+  #email;
+  #nascimento;
+  #role;
+  #ativo;
   constructor(name, email, nascimento, role, ativo = true) {
-    this.name = name;
-    this.email = email;
-    this.nascimento = nascimento;
-    this.role = role;
-    this.ativo = ativo;
+    this.#name = name;
+    this.#email = email;
+    this.#nascimento = nascimento;
+    this.#role = role || "estudante";
+    this.#ativo = ativo;
   }
 
+  get name() {
+    return this.#name;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  get nascimento() {
+    return this.#nascimento;
+  }
+
+  get role() {
+    return this.#role;
+  }
+
+  get ativo() {
+    return this.#ativo;
+  }
+
+  set name(novoName) {
+    if (novoName === "") {
+      throw new Error("O nome não pode ser vazio");
+    }
+    this.#name = novoName;
+  }   
+    
   exibirInfos() {
-    return `Nome: ${this.name}, Email: ${this.email}, Nascimento: ${this.nascimento}, Role: ${this.role}, Ativo: ${this.ativo}`;
+    const objUser = this.#montaObjetoUser();
+    return `Nome: ${objUser.name}, Email: ${objUser.email}, Nascimento: ${objUser.nascimento}, Role: ${objUser.role}, Ativo: ${objUser.ativo}`;
+  }
+
+  #montaObjetoUser() {
+    return {
+      name: this.#name,
+      email: this.#email,
+      nascimento: this.#nascimento,
+      role: this.#role,
+      ativo: this.#ativo,
+    };
   }
 }
 
